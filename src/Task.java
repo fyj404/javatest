@@ -3,14 +3,17 @@ class Task implements Callable<Integer> {
     @Override
     public Integer call() throws Exception {
         // 模拟计算需要一秒
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         return 2;
+        //Integer int
     }
 
     public static void main(String[] args) {
         // 创建线程池
         ExecutorService executor = Executors.newCachedThreadPool();
+
         Task task = new Task();
+        //int是数据类型
         Future<Integer> result = executor.submit(task);
 
         try {
