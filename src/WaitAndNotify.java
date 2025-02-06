@@ -9,6 +9,7 @@ public class WaitAndNotify {
                     try {
                         System.out.println("ThreadA: " + i);
                         lock.notify();
+                        //wait会先将已占用的锁释放
                         //wait() 方法通常与 synchronized 关键字配合使用。
                         // 它的作用是让当前线程进入等待状态，直到其他线程调用 notify() 或 notifyAll() 让它恢复执行。
                         lock.wait();

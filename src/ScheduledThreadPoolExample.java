@@ -2,7 +2,7 @@ import java.util.concurrent.*;
 
 public class ScheduledThreadPoolExample {
     public static void main(String[] args) {
-        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(10);
 
         // 延迟 3 秒后执行的任务
         scheduler.schedule(() -> {
@@ -12,6 +12,6 @@ public class ScheduledThreadPoolExample {
         // 每隔 2 秒执行一次的任务
         scheduler.scheduleAtFixedRate(() -> {
             System.out.println("Task executed every 2 seconds!");
-        }, 0, 2, TimeUnit.SECONDS);
+        }, 5, 2, TimeUnit.SECONDS);
     }
 }

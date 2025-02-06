@@ -1,3 +1,4 @@
+import java.time.DateTimeException;
 import java.util.LinkedList;
 
 public class WaitNotifyExample {
@@ -26,7 +27,7 @@ public class WaitNotifyExample {
                     lock.notify();  // 唤醒消费者
                 }
                 try {
-                    Thread.sleep(500);  // 模拟生产耗时
+                    Thread.sleep(2000);  // 模拟生产耗时
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -41,10 +42,10 @@ public class WaitNotifyExample {
             while (true) {
                 synchronized (lock) {
                     while (buffer.isEmpty()) {  // 缓冲区为空，等待生产者生产
-                        try {
+                        try { //如果括号内抛出异常，则直接跳到catch部分处理
                             System.out.println("缓冲区为空，消费者等待...");
                             lock.wait();
-                        } catch (InterruptedException e) {
+                        }catch (InterruptedException e) {
                             e.printStackTrace();
                         }
                     }
@@ -53,7 +54,7 @@ public class WaitNotifyExample {
                     lock.notify();  // 唤醒生产者
                 }
                 try {
-                    Thread.sleep(1000);  // 模拟消费耗时
+                    Thread.sleep(500);  // 模拟消费耗时
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

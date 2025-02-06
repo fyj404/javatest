@@ -12,7 +12,7 @@ public class InstanceLockExample {
 
     public static void main(String[] args) throws InterruptedException {
         InstanceLockExample example = new InstanceLockExample();
-
+        //InstanceLockExample example2 = new InstanceLockExample();
         // 创建两个线程，调用同一个同步实例方法
         Thread thread1 = new Thread(example::synchronizedMethod, "线程1");
         Thread thread2 = new Thread(example::synchronizedMethod, "线程2");
