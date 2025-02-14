@@ -71,7 +71,39 @@ list.add("Apple");
 list.add("Banana");
 System.out.println(list);
 ```
+#### ArrayList 方法
+add(E e) 添加元素
 
+get(int index) 获取指定位置元素
+
+set(int index, E e) 修改指定位置元素
+
+remove(int index) 删除指定位置元素
+
+size() 返回元素数量
+
+contains(Object o) 检查是否包含元素
+
+indexOf(Object o) 返回元素索引
+
+#### LinkedList 方法
+
+
+add(E e)添加元素
+
+addFirst(E e)在头部添加元素
+
+addLast(E e)在尾部添加元素
+
+getFirst()获取头部元素
+
+getLast()获取尾部元素
+
+removeFirst()删除头部元素
+
+removeLast()删除尾部元素
+
+size()返回元素数量
 ### Set（无序，唯一）
 
 HashSet：基于哈希表，元素无序且唯一。
@@ -99,7 +131,19 @@ queue.offer("A");
 queue.offer("B");
 System.out.println(queue.poll());
 ```
+#### 支持的方法
 
+add(E e) 添加元素，满时抛异常
+
+offer(E e) 添加元素，满时返回 false
+
+remove()  移除头部元素，空时抛异常
+
+poll()  移除并返回头部元素，空时返回 null
+
+element() 返回头部元素但不移除，空时抛异常
+
+peek() 返回头部元素但不移除，空时返回 null
 ### Map（键值对映射）
 
 HashMap：无序，键唯一。
@@ -113,7 +157,22 @@ queue.offer("A");
 queue.offer("B");
 System.out.println(queue.poll());
 ```
+### 支持的方法
+put(K key, V value) 添加键值对
 
+get(Object key) 获取对应值
+
+remove(Object key) 移除键值对
+
+containsKey(Object key) 判断是否包含键
+
+containsValue(Object value) 判断是否包含值
+
+keySet() 返回所有键集合
+
+values() 返回所有值集合
+
+entrySet() 返回所有键值对集合
 
 ## Java Concurrent Collection
 BlockingQueue 是 Java 并发包 (java.util.concurrent) 中的队列接口，
@@ -141,6 +200,14 @@ PriorityBlockingQueue 带优先级的无界队列，元素按优先级排序。
 DelayQueue 元素带有延迟时间，延迟到期后才能取出。
 
 SynchronousQueue 容量为 0，每次插入必须等待相应的取出操作。
+### 相较于普通队列的额外方法
+put(E e) 阻塞插入元素
+
+take() 阻塞获取元素
+
+offer(E e, time, unit) 超时等待插入
+
+poll(time, unit) 超时等待获取
 
 #### ArrayBlockingQueue
 
