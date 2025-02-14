@@ -1,3 +1,5 @@
+package Thread;
+
 public class DemoInter {
 
     public static class MyThread implements Runnable {

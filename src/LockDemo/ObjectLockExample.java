@@ -1,3 +1,5 @@
+package LockDemo;
+
 public class ObjectLockExample {
     private final Object lock = new Object();
     private int count = 0;

@@ -1,3 +1,5 @@
+package LockDemo;
+
 public class BlockExample {
     private final Object lock1 = new Object();
     private final Object lock2 = new Object();

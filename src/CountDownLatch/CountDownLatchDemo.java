@@ -1,3 +1,5 @@
+package CountDownLatch;
+
 import java.util.concurrent.CountDownLatch;
 
 class Worker implements Runnable {

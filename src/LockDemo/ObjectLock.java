@@ -1,3 +1,5 @@
+package LockDemo;
+
 public class ObjectLock {
     public synchronized void method1() {  // 实例方法加锁
         System.out.println(Thread.currentThread().getName() + " is executing method1");

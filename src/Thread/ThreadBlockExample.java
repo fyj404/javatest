@@ -1,3 +1,5 @@
+package Thread;
+
 public class ThreadBlockExample {
     private static final Object lock=new Object();
     public static void main(String[] args) {

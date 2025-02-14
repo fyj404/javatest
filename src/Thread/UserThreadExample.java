@@ -1,3 +1,5 @@
+package Thread;
+
 public class UserThreadExample {
     public static void main(String[] args) {
         Thread userThread = new Thread(() -> {

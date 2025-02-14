@@ -1,4 +1,4 @@
-package com.example.ArrayQueueExample;
+package BlockQueue;
 import java.util.concurrent.*;
 
 class Producer implements Runnable {

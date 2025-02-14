@@ -1,3 +1,5 @@
+package Thread;
+
 public class DaemonExample {
     public static void main(String[] args) {
         Thread daemonThread = new Thread(() -> {

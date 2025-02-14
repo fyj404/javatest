@@ -1,3 +1,5 @@
+package Thread;
+
 public class ThreadStatusExample {
     //
     public static void main(String[] args) {
