@@ -15,7 +15,7 @@ public class Hello {
 ```
 javac -d bin src/Hello.java
 
--d bin：强制按照包结构输出 .class 文件到 bin/ 下。
+-d bin：强制按照包结构输出 .class 文件到 bin/ 下。 
 
 java -cp bin com.example.Hello
 
