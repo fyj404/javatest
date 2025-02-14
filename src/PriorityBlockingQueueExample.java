@@ -32,11 +32,11 @@ class Producer implements Runnable {
     @Override
     public void run() {
         try {
-            for (int i = 1; i <= 5; i++) {
+            for (int i = 1; i <= 10; i++) {
                 Task task = new Task(i, "Task-" + i);
                 queue.put(task);  // 将任务放入队列，若队列满则阻塞
                 System.out.println("生产者生产: " + task);
-                Thread.sleep(500);  // 模拟生产时间
+                Thread.sleep(50);  // 模拟生产时间
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
@@ -76,6 +76,11 @@ public class PriorityBlockingQueueExample {
 
         // 启动生产者和消费者线程
         producerThread.start();
+        try {
+            Thread.sleep(200);  // 模拟消费时间
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         consumerThread.start();
     }
 }

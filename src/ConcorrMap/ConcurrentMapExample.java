@@ -27,7 +27,7 @@ public class ConcurrentMapExample {
 
         // computeIfAbsent：如果key不存在，通过计算插入新值
         map.computeIfAbsent("C", key -> 50);
-
+        map.computeIfAbsent("C", key -> 40);
         System.out.println("Map after computeIfAbsent: " + map);
     }
 }

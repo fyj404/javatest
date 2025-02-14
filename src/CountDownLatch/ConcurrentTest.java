@@ -9,7 +9,8 @@ public class ConcurrentTest {
         CountDownLatch doneSignal = new CountDownLatch(threadCount);  // 等待所有线程完成
 
         for (int i = 0; i < threadCount; i++) {
-            new Thread(() -> {
+            new Thread(
+                    () -> {
                 try {
                     startSignal.await();  // 等待开始信号
                     System.out.println(Thread.currentThread().getName() + " 开始执行");
@@ -18,7 +19,10 @@ public class ConcurrentTest {
                 } finally {
                     doneSignal.countDown();  // 任务完成，计数 -1
                 }
-            }).start();
+            }
+
+
+            ).start();
         }
 
         Thread.sleep(1000);  // 模拟主线程准备时间
