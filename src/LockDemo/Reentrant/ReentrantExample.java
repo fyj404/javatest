@@ -10,8 +10,8 @@ public class ReentrantExample {
         System.out.println("测试 synchronized 可重入性");
         example.synchronizedMethod1();
 
-        System.out.println("\n测试 ReentrantLock 可重入性");
-        example.reentrantLockMethod1();
+        //System.out.println("\n测试 ReentrantLock 可重入性");
+        //example.reentrantLockMethod1();
     }
 
     // synchronized 可重入示例
@@ -21,6 +21,7 @@ public class ReentrantExample {
     }
 
     public synchronized void synchronizedMethod2() {
+
         System.out.println("进入 synchronizedMethod2 (可重入成功)");
     }
 

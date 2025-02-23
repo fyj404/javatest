@@ -28,6 +28,7 @@ public class SynchronizedTryExample {
         } catch (InterruptedException ignored) {
         }
         t2.start();
+        t1.interrupt();
     }
 }
 

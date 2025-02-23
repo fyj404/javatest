@@ -43,5 +43,9 @@ public class ReadWriteLockExample {
 
         // 一个写入线程
         new Thread(() -> write(42), "Writer").start();
+
+        for (int i = 0; i < 3; i++) {
+            new Thread(ReadWriteLockExample::read, "Reader-" + i).start();
+        }
     }
 }

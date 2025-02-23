@@ -25,18 +25,19 @@ class SumTask extends RecursiveTask<Integer> {
             SumTask leftTask = new SumTask(start, mid);
             SumTask rightTask = new SumTask(mid + 1, end);
 
+            /*
             leftTask.fork(); // 递归拆分
             int rightResult = rightTask.compute();
             int leftResult = leftTask.join();
+               */
 
-            /*
             leftTask.fork();   // 异步执行左任务
             rightTask.fork();  // 让右任务也异步执行
 
             int leftResult = leftTask.join();   // 等待左任务完成
             int rightResult = rightTask.join(); // 等待右任务完成
 
-            * */
+
 
             return leftResult + rightResult;
         }

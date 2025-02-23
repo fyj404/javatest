@@ -32,6 +32,8 @@ public class ConditionLockExample {
             while (!ready) {
                 condition.await(); // 等待通知 等待信号并释放锁，直到被唤醒
             }
+            System.out.println("Worker " + id + " get lock ..");
+            Thread.sleep(5000);
             System.out.println("Worker " + id + " is proceeding...");
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
